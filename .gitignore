@@ -1,4 +1,5 @@
 *__pycache__*
+*pytest_cache*
 input_data/long_numbers.txt
 output_data/long_numbers_sorted_true.txt
 output_data/long_numbers_res.txt
