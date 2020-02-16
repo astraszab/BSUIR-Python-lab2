@@ -11,6 +11,8 @@ class ExternalSort:
     """External sort of a file with integer numbers (separated by spaces).
     """
     def __init__(self, input_file_name, block_size, output_file_name):
+        if block_size < 2:
+            raise ValueError('Block size should be integer greater than one.')
         self.input_file_name = input_file_name
         self.block_size = block_size
         self.output_file_name = output_file_name
