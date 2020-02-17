@@ -8,6 +8,10 @@ def test_equality():
     assert v1 == v2
 
 
+def test_inequality_with_not_vector():
+    assert Vector() != 5
+
+
 def test_vector_sum():
     v1 = Vector([1, 2, 3, 4])
     v2 = Vector([3, 2, 4, 1])
@@ -25,9 +29,43 @@ def test_scalar_sum():
     assert v + 1 == Vector([2, 3, 4, 5, 6])
 
 
+def test_scalar_rsum():
+    v = Vector([1, 2, 3, 4, 5])
+    assert 1 + v == Vector([2, 3, 4, 5, 6])
+
+
+def test_sum_with_not_numerical_input():
+    v = Vector([1, 2, 3, 4, 5])
+    with pytest.raises(ValueError):
+        v + 'a'
+
+
+def test_rsum_with_not_numerical_input():
+    v = Vector([1, 2, 3, 4, 5])
+    with pytest.raises(ValueError):
+        'a' + v
+
+
 def test_scalar_difference():
     v = Vector([1, 2, 3, 4, 5])
     assert v - 1 == Vector([0, 1, 2, 3, 4])
+
+
+def test_scalar_rdifference():
+    v = Vector([1, 2, 3, 4, 5])
+    assert 1 - v == Vector([0, -1, -2, -3, -4])
+
+
+def test_difference_with_not_numerical_input():
+    v = Vector([1, 2, 3, 4, 5])
+    with pytest.raises(ValueError):
+        v - 'a'
+
+
+def test_rdifference_with_not_numerical_input():
+    v = Vector([1, 2, 3, 4, 5])
+    with pytest.raises(ValueError):
+        'a' - v
 
 
 def test_product():
@@ -35,10 +73,33 @@ def test_product():
     assert v * 3 == Vector([3, 6, 9])
 
 
+def test_rproduct():
+    v = Vector([1, 2, 3])
+    assert 3 * v == Vector([3, 6, 9])
+
+
+def test_product_with_not_numerical_input():
+    v = Vector([1, 2, 3])
+    with pytest.raises(ValueError):
+        v * 'a'
+
+
+def test_rproduct_with_not_numerical_input():
+    v = Vector([1, 2, 3])
+    with pytest.raises(ValueError):
+        'a' * v
+
+
 def test_dot_product():
     v1 = Vector([2, 3, 4])
     v2 = Vector([-2, 1, -3])
     assert v1 @ v2 == -13
+
+
+def test_dot_product_with_not_numerical_input():
+    v = Vector([1, 2, 3])
+    with pytest.raises(ValueError):
+        v @ 'a'
 
 
 def test_length():
@@ -84,3 +145,17 @@ def test_different_lengths_for_dot_product():
     v2 = Vector([1, 2, 3])
     with pytest.raises(ValueError):
         v1 @ v2
+
+
+def test_different_lengths_for_dot_sum():
+    v1 = Vector([1, 2, 3, 4])
+    v2 = Vector([1, 2, 3])
+    with pytest.raises(ValueError):
+        v1 + v2
+
+
+def test_different_lengths_for_dot_difference():
+    v1 = Vector([1, 2, 3, 4])
+    v2 = Vector([1, 2, 3])
+    with pytest.raises(ValueError):
+        v1 - v2
