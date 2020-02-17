@@ -1,4 +1,6 @@
 class Vector:
+    """Numerical vector in R^n with some operations.
+    """
     def __init__(self, values=None):
         if values is None:
             values = []
