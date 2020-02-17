@@ -27,12 +27,12 @@ def test_scalar_sum():
 
 def test_scalar_difference():
     v = Vector([1, 2, 3, 4, 5])
-    assert v - 1 == Vector([1, 2, 3, 4, 5])
+    assert v - 1 == Vector([0, 1, 2, 3, 4])
 
 
 def test_product():
     v = Vector([1, 2, 3])
-    assert 3 * v == Vector([3, 6, 9])
+    assert v * 3 == Vector([3, 6, 9])
 
 
 def test_dot_product():
