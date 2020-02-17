@@ -1,3 +1,6 @@
+from math import isnan, isinf
+
+
 def dumps(obj):
     """Convert an object to a json string.
     """
@@ -7,6 +10,8 @@ def dumps(obj):
         else:
             return 'false'
     elif isinstance(obj, (int, float)):
+        if isinf(obj) or isnan(obj):
+            raise ValueError(f'JSON specification does not contain {obj}.')
         return str(obj)
     elif isinstance(obj, str):
         return f'"{obj}"'
