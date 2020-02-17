@@ -73,6 +73,12 @@ def test_not_number():
         Vector([1, 2, 'a'])
 
 
+def test_modification_with_wrong_value():
+    v = Vector([1, 2, 3])
+    with pytest.raises(ValueError):
+        v[1] = 'abc'
+
+
 def test_different_lengths_for_dot_product():
     v1 = Vector([1, 2, 3, 4])
     v2 = Vector([1, 2, 3])
