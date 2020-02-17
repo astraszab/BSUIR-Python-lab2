@@ -3,6 +3,9 @@ import warnings
 
 
 def cached(func):
+    """Cache arguments when function is called and save the result
+    to use instead of recalculating.
+    """
     @functools.wraps(func)
     def caching_wrapper(*args, **kwargs):
         try:
