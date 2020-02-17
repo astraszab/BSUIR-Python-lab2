@@ -46,9 +46,15 @@ def test_length():
     assert len(v) == 5
 
 
-def test_index():
+def test_index_access():
     v = Vector([4, 3, 0, 2, -1])
     assert v[3] == 2
+
+
+def test_index_modification():
+    v = Vector([4, 3, 0, 2, -1])
+    v[3] = 5
+    assert v[3] == 5
 
 
 def test_string_representation():
