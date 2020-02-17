@@ -147,14 +147,14 @@ def test_different_lengths_for_dot_product():
         v1 @ v2
 
 
-def test_different_lengths_for_dot_sum():
+def test_different_lengths_for_sum():
     v1 = Vector([1, 2, 3, 4])
     v2 = Vector([1, 2, 3])
     with pytest.raises(ValueError):
         v1 + v2
 
 
-def test_different_lengths_for_dot_difference():
+def test_different_lengths_for_difference():
     v1 = Vector([1, 2, 3, 4])
     v2 = Vector([1, 2, 3])
     with pytest.raises(ValueError):
