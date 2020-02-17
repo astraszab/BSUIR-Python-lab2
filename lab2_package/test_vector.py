@@ -38,7 +38,7 @@ def test_product():
 def test_dot_product():
     v1 = Vector([2, 3, 4])
     v2 = Vector([-2, 1, -3])
-    assert v1.dot(v2) == -13
+    assert v1 @ v2 == -13
 
 
 def test_length():
@@ -83,4 +83,4 @@ def test_different_lengths_for_dot_product():
     v1 = Vector([1, 2, 3, 4])
     v2 = Vector([1, 2, 3])
     with pytest.raises(ValueError):
-        v1.dot(v2)
+        v1 @ v2
