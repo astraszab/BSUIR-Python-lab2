@@ -159,3 +159,7 @@ def test_different_lengths_for_difference():
     v2 = Vector([1, 2, 3])
     with pytest.raises(ValueError):
         v1 - v2
+
+def test_norm():
+    v = Vector([3, 4])
+    assert v.norm() == 5

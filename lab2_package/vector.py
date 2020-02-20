@@ -1,3 +1,5 @@
+import math
+
 class Vector:
     """Numerical vector in R^n with some operations.
     """
@@ -76,3 +78,6 @@ class Vector:
 
     def __str__(self):
         return str(self._vector)
+
+    def norm(self):
+        return math.sqrt(self @ self)
