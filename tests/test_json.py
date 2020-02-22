@@ -1,4 +1,4 @@
-from lab2_package.json_serializer import dumps
+from lab2.src.json_serializer import dumps
 import pytest
 
 

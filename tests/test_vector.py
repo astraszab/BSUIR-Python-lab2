@@ -1,4 +1,4 @@
-from lab2_package.vector import Vector
+from lab2.src.vector import Vector
 import pytest
 
 

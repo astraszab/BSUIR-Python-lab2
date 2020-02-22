@@ -1,4 +1,4 @@
-from lab2_package.external_sort import external_sort
+from lab2.src.external_sort import external_sort
 from tempfile import TemporaryDirectory
 from os.path import join
 import pytest

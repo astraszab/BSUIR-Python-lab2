@@ -1,5 +1,5 @@
 import pytest
-from lab2_package.cached import cached
+from lab2.src.cached import cached
 from time import time
 
 

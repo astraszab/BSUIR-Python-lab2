@@ -1,4 +1,4 @@
-from lab2_package.singleton import singleton
+from lab2.src.singleton import singleton
 
 
 @singleton
